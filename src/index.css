@@ -10,3 +10,9 @@ body{
     padding: 2vh 10vw;
 }
 
+.logoDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
