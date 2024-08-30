@@ -1,0 +1,49 @@
+.homeDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.contentDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 25vh;
+}
+
+.homeTextContentDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.buttonDiv button{
+    padding: 1rem 2rem;
+    border: 1px solid #facc15;
+    border-radius: 5px;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: clamp(1rem, 1.7vw, 1.5rem);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.buttonDiv button::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #facc15;
+    z-index: -1;
+    transition: top 0.3s ease-in-out;
+}
+
+.buttonDiv button:hover::before {
+    top: 0;
+}
+
+.buttonDiv button:hover {
+    color: black;
+}

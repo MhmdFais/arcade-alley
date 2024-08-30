@@ -26,7 +26,7 @@ function Navbar() {
           `nav-link text-2xl pl-8 text-yellow-100 hover:text-yellow-400 ${isActive ? 'active' : ''}`
         }
       >
-        Home
+        HOME
       </NavLink>
       <NavLink
         to="/shop"
@@ -34,7 +34,7 @@ function Navbar() {
           `nav-link text-2xl pl-8 text-yellow-100 hover:text-yellow-400 ${isActive ? 'active' : ''}`
         }
       >
-        Shop
+        SHOP
       </NavLink>
       <NavLink
         to="/cart"
@@ -42,7 +42,7 @@ function Navbar() {
           `nav-link text-2xl pl-8  text-yellow-100 hover:text-yellow-400 ${isActive ? 'active' : ''}`
         }
       >
-        Cart
+        CART
       </NavLink>
     </nav>
   );
