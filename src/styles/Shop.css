@@ -1,0 +1,16 @@
+/* .shopDiv {
+    display: flex;
+    flex-direction: column;
+    animation: slideInRight 0.5s forwards;
+}
+  
+@keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+} */

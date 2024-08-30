@@ -1,3 +1,20 @@
+/* .homeDiv {
+    display: flex;
+    flex-direction: column;
+    animation: slideOutLeft 0.5s forwards;
+}
+  
+@keyframes slideOutLeft {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+} */
+
 .homeDiv{
     display: flex;
     flex-direction: column;

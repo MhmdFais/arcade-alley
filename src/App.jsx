@@ -1,10 +1,13 @@
 import Navbar from './Components/Navbar'
 import './styles/Home.css'
+import { useNavigate } from "react-router-dom";
 
 function App() {
 
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    console.log('button clicked')
+    navigate('/shop')
   }
 
   return (
