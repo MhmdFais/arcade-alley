@@ -16,7 +16,7 @@ function App() {
         <div className="logo"></div>
         <Navbar />
       </div>
-      <div className="contentDiv">
+      <div className="contentDiv backdrop-blur-md p-16 border-solid border border-y-white rounded-md">
         <div className="homeTextContentDiv">
           <div className="welcomeDiv">
             <h1 className='text-4xl text-slate-50'>Welcome to <span className='text-yellow-500 text-5xl font-medium'>Arcade Alley</span></h1>

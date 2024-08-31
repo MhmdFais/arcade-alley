@@ -44,6 +44,14 @@ function Navbar() {
       >
         CART
       </NavLink>
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          `nav-link text-2xl pl-8  text-yellow-100 hover:text-yellow-400 ${isActive ? 'active' : ''}`
+        }
+      >
+        ABOUT
+      </NavLink>
     </nav>
   );
 }

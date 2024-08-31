@@ -10,10 +10,15 @@ function Shop(){
     useEffect(() => {
         const fetchGames = async () => {
             try {
-                const response = await fetch('https://api.rawg.io/api/games?key=56bac37d425c4333acc6a0aa86319853')
+                const response = await fetch('https://www.cheapshark.com/api/1.0/deals')
                 const datas = await response.json()
-                setGames(datas.results)
-                console.log(datas.results)
+
+                const filteredGames = datas.filter((game) => (
+                    game.gameID !== '171780' && game.thumb && game.thumb.startsWith("https://sttc.gamersgate.com/images")
+                ))
+
+                setGames(filteredGames)
+                console.log(filteredGames)
                 setIsLoading(false)
             }
             catch(error){
