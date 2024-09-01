@@ -6,6 +6,19 @@ function Shop(){
 
     const [isLoading, setIsLoading] = useState(true);
     const [games, setGames] = useState([])
+    const [quantity, setQuantity] = useState(1);
+
+    const increment = () => {
+        console.log('increment');
+        setQuantity(quantity + 1);
+    }
+
+    const decrement = () => {
+        console.log('decrement');
+        if (quantity > 1) {
+            setQuantity(quantity - 1);
+        }
+    }
 
     useEffect(() => {
         const fetchGames = async () => {
@@ -45,7 +58,7 @@ function Shop(){
             </div>
             <div className="gamesCardDiv grid grid-cols-3 gap-4 mt-5">
                 {games.map((game, index) => (
-                     <Card key={index} game={game} />
+                     <Card key={index} game={game} onClickIncrement={increment} onClickDecrement={decrement} quantity={quantity}/>
                 ))}
             </div>
         </div>

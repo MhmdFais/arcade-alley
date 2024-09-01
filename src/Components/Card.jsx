@@ -1,21 +1,6 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 
-function Card({ game }) {
-
-    const [quantity, setQuantity] = useState(1);
-
-    const increment = () => {
-        console.log('increment');
-        setQuantity(quantity + 1);
-    }
-
-    const decrement = () => {
-        console.log('decrement');
-        if (quantity > 1) {
-            setQuantity(quantity - 1);
-        }
-    }
+function Card({ game, onClickIncrement, onClickDecrement, quantity }) {
 
     return (
         <div className="cardsDiv backdrop-blur-md border-solid border border-y-white rounded-md">
@@ -34,9 +19,9 @@ function Card({ game }) {
                     <h1 className="text-2xl text-white font-medium">Quantity</h1>
                 </div>
                 <div className="meter">
-                    <button className="decrement px-3 py-1 bg-gray-200 text-gray-700 rounded-l-md hover:bg-gray-300" onClick={decrement}>-</button>
+                    <button className="decrement px-3 py-1 bg-gray-200 text-gray-700 rounded-l-md hover:bg-gray-300" onClick={onClickDecrement}>-</button>
                     <input type="text" value={quantity} className="text-center w-12 py-1 border-none focus:outline-none" readOnly/>
-                    <button className="increment px-3 py-1 bg-gray-200 text-gray-700 rounded-r-md hover:bg-gray-300" onClick={increment}>+</button>
+                    <button className="increment px-3 py-1 bg-gray-200 text-gray-700 rounded-r-md hover:bg-gray-300" onClick={onClickIncrement}>+</button>
                 </div>
             </div>
             <div className="addToCardDiv p-2 px-4 items-center justify-center">
@@ -47,7 +32,10 @@ function Card({ game }) {
 }
 
 Card.propTypes = {
-    game: PropTypes.object.isRequired
+    game: PropTypes.object.isRequired,
+    onClickIncrement: PropTypes.func.isRequired,
+    onClickDecrement: PropTypes.func.isRequired,
+    quantity: PropTypes.number.isRequired
 }
 
 export default Card;
