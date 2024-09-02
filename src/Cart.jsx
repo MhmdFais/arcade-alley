@@ -15,7 +15,7 @@ function Cart(){
                 <Navbar />
             </div>
             <div className="cartBodyDiv flex gap-32 mt-16 justify-center items-center">
-                <div className="itemCard p-4 border border-solid border-yellow-200 rounded-md backdrop-blur-md">
+                <div className="itemCard p-4 border border-solid border-white rounded-md backdrop-blur-md">
                     {cartItems.length === 0 ? (
                         <p className='text-white text-2xl'>Your cart is empty</p>
                     ) : (
@@ -43,7 +43,7 @@ function Cart(){
                 </div>
                 <div className="totalDiv flex justify-center items-center ">
                     {cartItems.length > 0 && (
-                        <div className='p-4 border border-solid border-yellow-200 rounded-md backdrop-blur-md'>
+                        <div className='p-4 border border-solid border-white rounded-md backdrop-blur-md'>
                             <h2 className="text-2xl text-yellow-300 font-medium">Total Amount</h2>
                             <h2 className='text-4xl text-red-400 font-medium'>${total.toFixed(2)}</h2>
                         </div>

@@ -7,7 +7,7 @@ function About(){
                 <div className="logo"></div>
                 <Navbar />
             </div>
-            <div className="contentDiv flex justify-center items-center p-4 border border-solid border-yellow-200 rounded-md backdrop-blur-md"> 
+            <div className="contentDiv flex justify-center items-center p-4 border border-solid border-white rounded-md backdrop-blur-md"> 
                 <div className="title">
                     <h1 className='text-6xl text-yellow-400 font-bold'>Arcade Alley</h1>
                 </div>
