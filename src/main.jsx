@@ -6,6 +6,7 @@ import Shop from './Shop.jsx'
 import Cart from './Cart.jsx'
 import About from './About.jsx'
 import './index.css'
+import { CartProvider } from './context/CartContext.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <CartProvider> {/* Wrap the app with the CartProvider */}
+      <RouterProvider router={router}/>
+    </CartProvider>
   </StrictMode>,
 )
