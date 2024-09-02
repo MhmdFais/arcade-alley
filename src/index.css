@@ -60,3 +60,15 @@ body{
     transform: scale(0.9);
 }
 
+
+.cartDiv .deleteAnItem button:hover{
+    background-color: rgb(194, 53, 53);
+    color: black;
+}
+
+.cartDiv .deleteAnItem button:active{
+    background-color: rgb(196, 84, 84);
+    color: black;
+    transform: scale(0.9);
+}
+

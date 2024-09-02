@@ -4,7 +4,7 @@ import { CartContext } from './context/CartContext';
 
 function Cart(){
 
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, deleteAnItem } = useContext(CartContext);
 
     const total = cartItems.reduce((acc, item) => acc + item.game.normalPrice * item.quantity, 0);
 
@@ -20,14 +20,22 @@ function Cart(){
                         <p className='text-white text-2xl'>Your cart is empty</p>
                     ) : (
                         cartItems.map((item, index) => (
-                            <div key={index} className="cartItem border-b border-gray-300 p-4 grid grid-cols-12">
-                                <div className="firstSet col-span-8">
-                                    <h2 className="text-2xl text-yellow-300 font-medium">{item.game.title}</h2>
-                                    <p className="text-2xl text-white font-medium">Quantity: {item.quantity}</p>
+                            <div className="anItem border-b border-gray-300" key={index}>
+                                    <div className="cartItem p-4 grid grid-cols-12">
+                                    <div className="firstSet col-span-8">
+                                        <h2 className="text-2xl text-yellow-300 font-medium">{item.game.title}</h2>
+                                        <p className="text-2xl text-white font-medium">Quantity: {item.quantity}</p>
+                                    </div>
+                                    <div className="lastSet col-span-4 text-right">
+                                        <p className="text-2xl text-red-400 font-medium">Price: ${item.game.normalPrice}</p>
+                                        <p className="text-2xl text-white font-medium">Total: ${(item.game.normalPrice * item.quantity).toFixed(2)}</p>
+                                    </div>
                                 </div>
-                                <div className="lastSet col-span-4 text-right">
-                                    <p className="text-2xl text-red-400 font-medium">Price: ${item.game.normalPrice}</p>
-                                    <p className="text-2xl text-white font-medium">Total: ${(item.game.normalPrice * item.quantity).toFixed(2)}</p>
+                                <div className="deleteAnItem p-4 ">
+                                    <button 
+                                        className='bg-inherit text-white text-2xl p-1 w-1/4 font-medium border border-solid border-red-600 rounded-md' 
+                                        onClick={() => deleteAnItem(item.game.gameID)}
+                                    >Delete</button>
                                 </div>
                             </div>
                         ))
