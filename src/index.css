@@ -49,3 +49,14 @@ body{
 }
   
 
+.cardsDiv .addToCardDiv button:hover{
+    background-color: #facc15;
+    color: black;
+}
+
+.cardsDiv .addToCardDiv button:active{
+    background-color: #facc15;
+    color: black;
+    transform: scale(0.9);
+}
+

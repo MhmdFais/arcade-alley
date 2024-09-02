@@ -14,25 +14,34 @@ function Cart(){
                 <div className="logo"></div>
                 <Navbar />
             </div>
-            <div className="itemCard">
-                {cartItems.length === 0 ? (
-                    <p className='text-white text-2xl'>Your cart is empty</p>
-                ) : (
-                    cartItems.map((item, index) => (
-                        <div key={index} className="cartItem border-b border-gray-300 p-4">
-                            <h2 className="text-2xl text-yellow-300">{item.game.title}</h2>
-                            <p className="text-lg text-white">Quantity: {item.quantity}</p>
-                            <p className="text-lg text-red-500">Price: ${item.game.normalPrice}</p>
-                            <p className="text-lg text-white">Total: ${(item.game.normalPrice * item.quantity).toFixed(2)}</p>
-                        </div>
-                    ))
-                )}
-            </div>
-            {cartItems.length > 0 && (
-                <div className="cartTotalDiv mt-4">
-                    <h2 className="text-2xl text-yellow-300">Total Amount: ${total.toFixed(2)}</h2>
+            <div className="cartBodyDiv flex gap-32 mt-16 justify-center items-center">
+                <div className="itemCard p-4 border border-solid border-yellow-200 rounded-md backdrop-blur-md">
+                    {cartItems.length === 0 ? (
+                        <p className='text-white text-2xl'>Your cart is empty</p>
+                    ) : (
+                        cartItems.map((item, index) => (
+                            <div key={index} className="cartItem border-b border-gray-300 p-4 grid grid-cols-12">
+                                <div className="firstSet col-span-8">
+                                    <h2 className="text-2xl text-yellow-300 font-medium">{item.game.title}</h2>
+                                    <p className="text-2xl text-white font-medium">Quantity: {item.quantity}</p>
+                                </div>
+                                <div className="lastSet col-span-4 text-right">
+                                    <p className="text-2xl text-red-400 font-medium">Price: ${item.game.normalPrice}</p>
+                                    <p className="text-2xl text-white font-medium">Total: ${(item.game.normalPrice * item.quantity).toFixed(2)}</p>
+                                </div>
+                            </div>
+                        ))
+                    )}
                 </div>
-            )}
+                <div className="totalDiv flex justify-center items-center ">
+                    {cartItems.length > 0 && (
+                        <div className='p-4 border border-solid border-yellow-200 rounded-md backdrop-blur-md'>
+                            <h2 className="text-2xl text-yellow-300 font-medium">Total Amount</h2>
+                            <h2 className='text-4xl text-red-400 font-medium'>${total.toFixed(2)}</h2>
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
     )
 }

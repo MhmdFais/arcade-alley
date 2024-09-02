@@ -25,7 +25,10 @@ function Card({ game, onClickIncrement, onClickDecrement, quantity, handleClick 
                 </div>
             </div>
             <div className="addToCardDiv p-2 px-4 items-center justify-center">
-                <button className='bg-inherit text-white p-2 rounded-md w-full font-medium border border-solid border-yellow-200' onClick={handleClick}>+ Add to Cart</button>
+                <button 
+                    className='bg-inherit text-white p-2 rounded-md w-full font-medium border border-solid border-yellow-200' 
+                    onClick={handleClick}
+                >+ Add to Cart</button>
             </div>
         </div>
     )
